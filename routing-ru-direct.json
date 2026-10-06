@@ -1,0 +1,14 @@
+{
+  "domainStrategy": "IPIfNonMatch",
+  "rules": [
+    { "type": "field", "ip": ["geoip:private"], "outboundTag": "direct" },
+    {
+      "type": "field",
+      "domain": ["domain:gosuslugi.ru", "domain:example-bank.ru", "domain:example-marketplace.ru"],
+      "outboundTag": "direct"
+    },
+    { "type": "field", "domain": ["geosite:category-ru"], "outboundTag": "direct" },
+    { "type": "field", "ip": ["geoip:ru"], "outboundTag": "direct" },
+    { "type": "field", "network": "tcp,udp", "outboundTag": "proxy" }
+  ]
+}

@@ -1,0 +1,19 @@
+# Клиент Hysteria2 (https://v2.hysteria.network/) — пример с заглушками
+server: SERVER:443
+auth: PASSWORD
+
+tls:
+  sni: your.domain
+  insecure: false
+
+# Маскировка Salamander: трафик не похож на обычный QUIC
+obfs:
+  type: salamander
+  salamander:
+    password: OBFS_PASSWORD
+
+socks5:
+  listen: 127.0.0.1:10808
+
+http:
+  listen: 127.0.0.1:10809
